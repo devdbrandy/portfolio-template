@@ -39,6 +39,13 @@ $portrait-size: 250px;
   }
 }
 
+@function set-text-color($color) {
+  @if (lightness($color) > 40) {
+    @return black;
+  }
+  @return white;
+}
+
 /* Media Query Mixins */
 @mixin media-sm {
   @media screen and (max-width: 500px) {

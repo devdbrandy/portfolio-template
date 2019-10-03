@@ -14,7 +14,7 @@ body {
   font-family: $body-font;
   line-height: 1.5;
   background: $primary-color;
-  color: white;
+  color: set-text-color($primary-color);
 }
 
 /* Headings */

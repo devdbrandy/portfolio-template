@@ -11,7 +11,7 @@
     width: 28px;
     height: 3px;
     margin: 0 0 5px 0;
-    background: white;
+    background: set-text-color($primary-color);
     @include ease-out;
   }
 
@@ -40,7 +40,7 @@
   position: fixed;
   top: 0;
   width: 100%;
-  // opacity: .9;
+  opacity: .99;
   visibility: hidden;
 
   &.show {
@@ -110,6 +110,7 @@
     text-transform: uppercase;
     padding: 16px 0;
     text-decoration: none;
+    color: set-text-color($primary-color);
     @include ease-out;
 
     &:hover {
