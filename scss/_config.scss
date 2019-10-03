@@ -11,7 +11,8 @@ $body-font: 'Lato', sans-serif;
 $show-background-image: true;
 $background-image: url('../img/background.jpg');
 $background-opacity: 0.9;
-$portriat-image: url('../img/portrait.jpg');
+$portrait-image: url('../img/portrait.jpg');
+$portrait-size: 250px;
 
 @mixin ease-out {
   transition: all .5s ease-out;
@@ -35,5 +36,30 @@ $portriat-image: url('../img/portrait.jpg');
       background: rgba($primary-color, $background-opacity);
       z-index: -1;
     }
+  }
+}
+
+/* Media Query Mixins */
+@mixin media-sm {
+  @media screen and (max-width: 500px) {
+    @content;
+  }
+}
+
+@mixin media-md {
+  @media screen and (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin media-lg {
+  @media screen and (min-width: 769px) and (max-width: 1170px) {
+    @content;
+  }
+}
+
+@mixin media-xl {
+  @media screen and (min-width: 1171px) {
+    @content;
   }
 }

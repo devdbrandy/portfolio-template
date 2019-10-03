@@ -81,9 +81,9 @@
     }
 
     .portrait {
-      width: 250px;
-      height: 250px;
-      background: $portriat-image;
+      width: $portrait-size;
+      height: $portrait-size;
+      background: $portrait-image;
       background-size: cover;
       border-radius: 50%;
       border: solid 3px $secondary-color;
