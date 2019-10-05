@@ -130,15 +130,41 @@ main#home {
       display:block;
       width: 100%;
       @include ease-out;
-
-      &:hover {
-        opacity: .5;
-        transform: scale(1.5);
-      }
     }
 
     &:hover {
       border-color: $secondary-color;
+
+      img {
+        opacity: .5;
+        transform: scale(1.5);
+      }
+    }
+  }
+}
+
+/* Contact page */
+.boxes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 16px;
+
+  p {
+    font-size: 20px;
+    border: 3px solid white;
+    padding: 24px 40px;
+    margin-bottom: 48px;
+    @include ease-out;
+
+    &:hover {
+      background: $secondary-color;
+      color: set-text-color($secondary-color);
+
+      span {
+        color: set-text-color($secondary-color);
+      }
     }
   }
 }
