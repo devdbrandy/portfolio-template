@@ -2,7 +2,7 @@
   "name": "portfolio-template",
   "version": "1.0.0",
   "description": "Simple template of my portfolio",
-  "homepage": "https://devdbrandy.github.com/portfolio-template",
+  "homepage": "https://devdbrandy.github.io/portfolio-template/",
   "scripts": {
     "sass": "node-sass -w scss/ -o dist/css -r",
     "deploy": "gh-pages -d dist"
