@@ -8,7 +8,7 @@ Template is built and retouched based on the following tutorial: [Responsive Por
 
 ---
 
-**DB Portfolio** © 2019+, Harry Dbrandy. Released under the [MIT] License.
+**DB Portfolio** © 2019+, Harry Dbrandy.
 
 > GitHub [@devdbrandy](https://github.com/devdbrandy)
 > Twitter [@devdbrandy](https://twitter.com/devdbrandy)
