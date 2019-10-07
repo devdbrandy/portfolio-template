@@ -2,8 +2,10 @@
   "name": "portfolio-template",
   "version": "1.0.0",
   "description": "Simple template of my portfolio",
+  "homepage": "https://devdbrandy.github.com/portfolio-template",
   "scripts": {
-    "sass": "node-sass -w scss/ -o dist/css -r"
+    "sass": "node-sass -w scss/ -o dist/css -r",
+    "deploy": "gh-pages -d dist"
   },
   "keywords": [
     "portfolio",
@@ -13,6 +15,7 @@
   "license": "MIT",
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.11.2",
+    "gh-pages": "^2.1.1",
     "node-sass": "^4.12.0"
   }
 }
