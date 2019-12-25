@@ -14,8 +14,8 @@ $background-opacity: 0.9;
 $portrait-image: url('../img/portrait.jpg');
 $portrait-size: 250px;
 
-@mixin ease-out {
-  transition: all .5s ease-out;
+@mixin ease-out($time: .5s) {
+  transition: all $time ease-out;
 }
 
 @mixin background {

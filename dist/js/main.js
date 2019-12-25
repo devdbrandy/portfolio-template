@@ -5,7 +5,7 @@
  */
 const $ = selector => document.querySelector(selector);
 
-const $menuBtn = $('.menu-btn');
+const $menuBtn = $('.burger');
 const $menu = $('.menu');
 const $menuNav = $('.menu-nav');
 const $menuBranding = $('.menu-branding');
@@ -16,7 +16,9 @@ let showMenu = false;
 
 function toggleMenu() {
   if (!showMenu) {
-    $menuBtn.classList.add('close');
+    $menuBtn.classList.add('st-1');
+    setTimeout(() => $menuBtn.classList.add('st-2'), 500);
+
     $menu.classList.add('show');
     $menuNav.classList.add('show');
     $menuBranding.classList.add('show');
@@ -24,7 +26,9 @@ function toggleMenu() {
 
     showMenu = true;
   } else {
-    $menuBtn.classList.remove('close');
+    $menuBtn.classList.remove('st-2');
+    setTimeout(() => $menuBtn.classList.remove('st-1'), 500);
+
     $menu.classList.remove('show');
     $menuNav.classList.remove('show');
     $menuBranding.classList.remove('show');
@@ -35,3 +39,5 @@ function toggleMenu() {
 }
 
 $menuBtn.addEventListener('click', toggleMenu);
+$menuBtn.addEventListener('mouseover', () => $menuBtn.classList.add('hover'));
+$menuBtn.addEventListener('mouseout', () => $menuBtn.classList.remove('hover'));

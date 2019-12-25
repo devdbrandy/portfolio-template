@@ -4,27 +4,43 @@
 /* misc variables */
 /* Media Query Mixins */
 /* Menu Button */
-.menu-btn {
-  position: absolute;
-  z-index: 3;
+.burger {
+  position: fixed;
+  z-index: 999;
   right: 35px;
   top: 35px;
   cursor: pointer;
-  transition: all .5s ease-out; }
-  .menu-btn .btn-line {
-    width: 28px;
-    height: 3px;
-    margin: 0 0 5px 0;
+  padding: 5px 4px;
+  transition: all 0.3s ease-out; }
+  .burger i {
+    display: block;
+    width: 42px;
+    height: 2px;
+    margin: 8px;
     background: white;
-    transition: all .5s ease-out; }
-  .menu-btn.close {
-    transform: rotate(180deg); }
-    .menu-btn.close .btn-line:nth-child(1) {
-      transform: rotate(45deg) translate(5px, 5px); }
-    .menu-btn.close .btn-line:nth-child(2) {
-      opacity: 0; }
-    .menu-btn.close .btn-line:nth-child(3) {
-      transform: rotate(-45deg) translate(6px, -6px); }
+    transition: all 0.3s ease-out; }
+  .burger.hover i:nth-child(1) {
+    transform: translate3d(0, -4px, 0); }
+  .burger.hover i:nth-child(3) {
+    transform: translate3d(0, 4px, 0); }
+  .burger.st-1 {
+    animation: rotate-back-in 0.8s cubic-bezier(0.2, 0.86, 0.35, 1) forwards; }
+    .burger.st-1 i:nth-child(1) {
+      transform: translate3d(0, 9px, 0); }
+    .burger.st-1 i:nth-child(3) {
+      transform: translate3d(0, -9px, 0); }
+    .burger.st-1 i:nth-child(n) {
+      transition: transform 0.45s cubic-bezier(0.43, 0.77, 0.15, 1.5), background 0.3s ease; }
+  .burger.st-2 i:nth-child(1) {
+    transform: translate3d(0, 10px, 0) rotate(45deg) scale(1.5); }
+  .burger.st-2 i:nth-child(2) {
+    opacity: 0; }
+  .burger.st-2 i:nth-child(3) {
+    transform: translate3d(0, -10px, 0) rotate(-45deg) scale(1.5); }
+  .burger.st-2.hover i:nth-child(1) {
+    transform: translate3d(0, 10px, 0) rotate(50deg) scale(1.5); }
+  .burger.st-2.hover i:nth-child(3) {
+    transform: translate3d(0, -10px, 0) rotate(-50deg) scale(1.5); }
 
 /* Menu Overlay */
 .menu {
@@ -50,13 +66,13 @@
     background: #313131;
     list-style: none;
     transform: translate3d(0, -100%, 0);
-    transition: all .5s ease-out; }
+    transition: all 0.5s ease-out; }
     .menu-nav.show {
       transform: translate3d(0, 0, 0); }
   .menu-branding {
     background: #3e3e3e;
     transform: translate3d(0, 100%, 0);
-    transition: all .5s ease-out; }
+    transition: all 0.5s ease-out; }
     .menu-branding.show {
       transform: translate3d(0, 0, 0); }
     .menu-branding .portrait {
@@ -68,7 +84,7 @@
       border: solid 3px #e69e29; }
   .menu .nav-item {
     transform: translate3d(600px, 0, 0);
-    transition: all .5s ease-out; }
+    transition: all 0.5s ease-out; }
     .menu .nav-item.show {
       transform: translate3d(0, 0, 0); }
     .menu .nav-item.active > a {
@@ -81,7 +97,7 @@
     padding: 16px 0;
     text-decoration: none;
     color: white;
-    transition: all .5s ease-out; }
+    transition: all 0.5s ease-out; }
     .menu .nav-link:hover {
       color: #e69e29; }
 
@@ -155,7 +171,7 @@ main {
       padding: 5px; }
       main .social-icons a:hover {
         color: #e69e29;
-        transition: all .5s ease-out; }
+        transition: all 0.5s ease-out; }
 
 main#home {
   overflow: hidden; }
@@ -199,7 +215,7 @@ main#home {
     .projects .cover-image img {
       display: block;
       width: 100%;
-      transition: all .5s ease-out; }
+      transition: all 0.5s ease-out; }
     .projects .cover-image:hover {
       border-color: #e69e29; }
       .projects .cover-image:hover img {
@@ -218,7 +234,7 @@ main#home {
     border: 3px solid white;
     padding: 24px 40px;
     margin-bottom: 48px;
-    transition: all .5s ease-out; }
+    transition: all 0.5s ease-out; }
     .boxes p:hover {
       background: #e69e29;
       color: black; }
