@@ -26,6 +26,7 @@ function toggleMenu() {
 
     showMenu = true;
   } else {
+    $menuBtn.classList.remove('hover');
     $menuBtn.classList.remove('st-2');
     setTimeout(() => $menuBtn.classList.remove('st-1'), 500);
 

@@ -10,8 +10,7 @@
   right: 35px;
   top: 35px;
   cursor: pointer;
-  padding: 5px 4px;
-  transition: all 0.3s ease-out; }
+  padding: 5px 4px; }
   .burger i {
     display: block;
     width: 42px;
@@ -31,16 +30,18 @@
       transform: translate3d(0, -9px, 0); }
     .burger.st-1 i:nth-child(n) {
       transition: transform 0.45s cubic-bezier(0.43, 0.77, 0.15, 1.5), background 0.3s ease; }
-  .burger.st-2 i:nth-child(1) {
-    transform: translate3d(0, 10px, 0) rotate(45deg) scale(1.5); }
-  .burger.st-2 i:nth-child(2) {
-    opacity: 0; }
-  .burger.st-2 i:nth-child(3) {
-    transform: translate3d(0, -10px, 0) rotate(-45deg) scale(1.5); }
-  .burger.st-2.hover i:nth-child(1) {
-    transform: translate3d(0, 10px, 0) rotate(50deg) scale(1.5); }
-  .burger.st-2.hover i:nth-child(3) {
-    transform: translate3d(0, -10px, 0) rotate(-50deg) scale(1.5); }
+  .burger.st-2 {
+    animation: rotate-back-out 0.85s cubic-bezier(0.2, 0.86, 0.35, 1) forwards; }
+    .burger.st-2 i:nth-child(1) {
+      transform: translate3d(0, 10px, 0) rotate(45deg) scale(1.5); }
+    .burger.st-2 i:nth-child(2) {
+      opacity: 0; }
+    .burger.st-2 i:nth-child(3) {
+      transform: translate3d(0, -10px, 0) rotate(-45deg) scale(1.5); }
+    .burger.st-2.hover i:nth-child(1) {
+      transform: translate3d(0, 10px, 0) rotate(50deg) scale(1.5); }
+    .burger.st-2.hover i:nth-child(3) {
+      transform: translate3d(0, -10px, 0) rotate(-50deg) scale(1.5); }
 
 /* Menu Overlay */
 .menu {
@@ -82,24 +83,62 @@
       background-size: cover;
       border-radius: 50%;
       border: solid 3px #e69e29; }
-  .menu .nav-item {
-    transform: translate3d(600px, 0, 0);
-    transition: all 0.5s ease-out; }
-    .menu .nav-item.show {
-      transform: translate3d(0, 0, 0); }
-    .menu .nav-item.active > a {
-      color: #e69e29; }
-  .menu .nav-link {
-    display: inline-block;
+  .menu .menu-nav a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 90%;
+    max-width: 600px;
+    margin: 0 auto;
+    position: relative;
+    background: rgba(0, 0, 0, 0.02);
+    height: calc(70% / 4);
     font-size: 32px;
     font-weight: 500;
     text-transform: uppercase;
-    padding: 16px 0;
-    text-decoration: none;
     color: white;
-    transition: all 0.5s ease-out; }
-    .menu .nav-link:hover {
+    overflow: hidden; }
+    .menu .menu-nav a::before {
+      top: 0;
+      transform: translate3d(-100%, 0, 0);
+      background-color: #2e2e2e;
+      z-index: -1; }
+    .menu .menu-nav a::after {
+      bottom: 0;
+      transform: translate3d(100%, 0, 0);
+      transition-delay: 125ms;
+      background-color: #2d2d2d;
+      z-index: -2; }
+    .menu .menu-nav a::after, .menu .menu-nav a::before {
+      content: '';
+      height: 75%;
+      width: 100%;
+      left: 0;
+      position: absolute;
+      transition: transform 0.4s cubic-bezier(0.65, 0.15, 0, 1); }
+    .menu .menu-nav a:hover {
       color: #e69e29; }
+      .menu .menu-nav a:hover::after, .menu .menu-nav a:hover::before {
+        transform: translate3d(0, 0, 0); }
+    .menu .menu-nav a.active {
+      color: #e69e29; }
+
+@keyframes rotate-back-out {
+  0% {
+    transform: rotate(0); }
+  45% {
+    transform: rotate(185deg); }
+  100% {
+    transform: rotate(180deg); } }
+
+@keyframes rotate-back-in {
+  0% {
+    transform: rotate(180deg); }
+  45% {
+    transform: rotate(-5deg); }
+  100% {
+    transform: rotate(0); } }
 
 .nav-item:nth-child(1) {
   transition-delay: 0.1s; }
@@ -283,6 +322,11 @@ main#home {
 
 /* Tablets & Small Laptops */
 @media screen and (max-width: 768px) {
+  .burger {
+    right: 8px; }
+  .menu-nav {
+    display: block;
+    padding: calc(30% / 4); }
   main {
     align-items: center;
     text-align: center; }
@@ -295,10 +339,6 @@ main#home {
     min-height: 0; }
     .menu-nav.show, .menu-branding.show {
       transform: translate3d(0, 0, 0); }
-  .menu-nav {
-    height: 75vh;
-    font-size: 24px;
-    transform: translate3d(-100%, 0, 0); }
   .menu-branding {
     height: 25vh;
     transform: translate3d(100%, 0, 0); }
@@ -313,6 +353,8 @@ main#home {
 
 /* Smartphones */
 @media screen and (max-width: 500px) {
+  .burger i {
+    width: 28px; }
   main#home h1 {
     margin-top: 10vh; }
   .projects {

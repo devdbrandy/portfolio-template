@@ -6,7 +6,6 @@
   top: 35px;
   cursor: pointer;
   padding: 5px 4px;
-  @include ease-out(.3s);
 
   i {
     display: block;
@@ -31,7 +30,7 @@
 
   // Menu burger rotation - first stage
   &.st-1 {
-    animation: rotate-back-in .8s cubic-bezier(.2, .86, .35, 1) forwards;
+    animation: rotate-back-in .8s cubic-bezier(.2,.86,.35,1) forwards;
     
     i {
       &:nth-child(1) {
@@ -49,7 +48,9 @@
   }
 
   // Menu burger rotation - first stage
-  &.st-2 {    
+  &.st-2 {
+    animation: rotate-back-out .85s cubic-bezier(.2,.86,.35,1) forwards;
+     
     i {
       &:nth-child(1) {
         transform: translate3d(0, 10px, 0) rotate(45deg) scale(1.5);
@@ -133,32 +134,87 @@
     }
   }
 
-  .nav-item {
-    transform: translate3d(600px, 0, 0); // takes it off the page to right
-    @include ease-out;
-
-    &.show {
-      transform: translate3d(0, 0, 0); // slide in from right
-    }
-
-    &.active > a {
-      color: $secondary-color;
-    }
-  }
-
-  .nav-link {
-    display: inline-block;
+  .menu-nav a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 90%;
+    max-width: 600px;
+    margin: 0 auto;
+    position: relative;
+    background: rgba(0, 0, 0, .02);
+    height: calc(70% / 4);
     font-size: 32px;
     font-weight: 500;
     text-transform: uppercase;
-    padding: 16px 0;
-    text-decoration: none;
     color: set-text-color($primary-color);
-    @include ease-out;
+    overflow: hidden;
+
+    &::before {
+      top: 0;
+      transform: translate3d(-100%,0,0);
+      background-color: #2e2e2e;
+      z-index: -1;
+    }
+
+    &::after {
+      bottom: 0;
+      transform: translate3d(100%,0,0);
+      transition-delay: 125ms;
+      background-color: #2d2d2d;
+      z-index: -2;
+    }
+
+    &::after, &::before {
+      content: '';
+      height: 75%;
+      width: 100%;
+      left: 0;
+      position: absolute;
+      transition: transform .4s cubic-bezier(.65,.15,0,1);
+    }
 
     &:hover {
       color: $secondary-color;
+      
+      &::after, &::before {
+        transform: translate3d(0,0,0);
+      }
     }
+
+    &.active {
+      color: $secondary-color;
+    }
+  }
+}
+
+// menu burger animation
+@keyframes rotate-back-out {
+  0% {
+    transform: rotate(0);
+  }
+
+  45% {
+    transform: rotate(185deg);
+  }
+
+  100% {
+    transform: rotate(180deg);
+  }
+}
+
+@keyframes rotate-back-in {
+  0% {
+    transform: rotate(180deg);
+  }
+
+  45% {
+    transform: rotate(-5deg);
+  }
+
+  100% {
+    transform: rotate(0);
   }
 }
 
