@@ -43,7 +43,7 @@ $portrait-size: 250px;
   @if (lightness($color) > 40) {
     @return black;
   }
-  @return white;
+  @return #cacaca;
 }
 
 /* Media Query Mixins */

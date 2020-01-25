@@ -16,7 +16,7 @@
     width: 42px;
     height: 2px;
     margin: 8px;
-    background: white;
+    background: #cacaca;
     transition: all 0.3s ease-out; }
   .burger.hover i:nth-child(1) {
     transform: translate3d(0, -4px, 0); }
@@ -97,7 +97,7 @@
     font-size: 32px;
     font-weight: 500;
     text-transform: uppercase;
-    color: white;
+    color: #cacaca;
     overflow: hidden; }
     .menu .menu-nav a::before {
       top: 0;
@@ -161,7 +161,7 @@ body {
   font-family: "Lato", sans-serif;
   line-height: 1.5;
   background: #3e3e3e;
-  color: white; }
+  color: #cacaca; }
   body#bg-image {
     background: url("../img/background.jpg");
     background-attachment: fixed;
@@ -302,7 +302,7 @@ main#home {
   text-align: center;
   padding: 16px;
   background: #252525;
-  color: white;
+  color: #cacaca;
   height: 60px; }
   #footer .fa-heart {
     color: red;
