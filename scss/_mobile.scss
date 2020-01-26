@@ -70,14 +70,34 @@
 
 /* Smartphones */
 @include media-sm {
+  h1, h2, h3 {
+    &.lg-heading {
+      font-size: 5rem;
+    }
+
+    &.sm-heading {
+      font-size: 18px;
+    }
+  }
+  
   .burger {
     i {
       width: 28px;
     }
   }
+
+  main#home,
+  main#about,
+  main#work {
+    padding: 4rem 3rem;
+  }
   
   main#home h1 {
     margin-top: 10vh;
+  }
+
+  .about-info .bio p {
+    font-size: 1rem;
   }
 
   .projects {

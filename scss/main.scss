@@ -89,11 +89,13 @@ main#home {
     margin: auto;
     border-radius: 50%;
     border: 3px solid $secondary-color;
+    width: 250px;
+    height: 250px;
   }
   
   .bio {
     grid-area: bio;
-    font-size: 24px;
+    font-size: 18px;
   }
   
   .job-1 {
@@ -112,6 +114,15 @@ main#home {
     background: lighten($primary-color, 5);
     padding: 8px;
     border-bottom: 3px solid $secondary-color;
+
+    h6 {
+      margin: 1rem 0;
+    }
+
+    ul {
+      padding-left: 20px;
+      text-align: left;
+    }
   }
 }
 
