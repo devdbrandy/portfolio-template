@@ -5,6 +5,7 @@
 Template is built and retouched based on the following tutorial: [Responsive Portfolio Website Project](https://www.youtube.com/playlist?list=PLillGF-RfqbYoGoCjKoMOkVznV6aSXKzU)
 
 ![Homepage](screenshots/homepage.png)
+![Navigation Menu](screenshots/navigation_menu.png)
 
 ---
 
