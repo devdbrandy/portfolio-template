@@ -197,9 +197,29 @@ header {
   z-index: 2;
   width: 100%; }
 
+/* globals */
 .text-secondary {
   color: #e69e29; }
 
+/* Button styles */
+.btn, .btn-dark, .btn-light {
+  display: block;
+  padding: 8px 16px;
+  border: 0;
+  margin-bottom: 5px; }
+  .btn:hover, .btn-dark:hover, .btn-light:hover {
+    background: #e69e29;
+    color: black; }
+
+.btn-dark {
+  background: black;
+  color: white; }
+
+.btn-light {
+  background: #bebebe;
+  color: #333; }
+
+/* home page */
 main {
   padding: 4rem;
   height: 100%;
@@ -217,7 +237,7 @@ main#home {
   main#home h1 {
     margin-top: 20vh; }
 
-/* About Page */
+/* about Page */
 .about-info {
   display: grid;
   gap: 20px;
@@ -249,7 +269,7 @@ main#home {
       padding-left: 20px;
       text-align: left; }
 
-/* Work and Projects page */
+/* portfolio page */
 .projects {
   display: grid;
   gap: 10px;
@@ -268,7 +288,7 @@ main#home {
         opacity: .5;
         transform: scale(1.5); }
 
-/* Contact page */
+/* contact page */
 .boxes {
   display: flex;
   flex-wrap: wrap;
@@ -287,24 +307,7 @@ main#home {
       .boxes p:hover span {
         color: black; }
 
-/* Button styles */
-.btn, .btn-dark, .btn-light {
-  display: block;
-  padding: 8px 16px;
-  border: 0;
-  margin-bottom: 5px; }
-  .btn:hover, .btn-dark:hover, .btn-light:hover {
-    background: #e69e29;
-    color: black; }
-
-.btn-dark {
-  background: black;
-  color: white; }
-
-.btn-light {
-  background: #bebebe;
-  color: #333; }
-
+/* main footer */
 #footer {
   text-align: center;
   padding: 16px;

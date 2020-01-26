@@ -44,167 +44,22 @@ header {
   width: 100%;
 }
 
-.text-secondary {
-  color: $secondary-color;
-}
+/* globals */
+@import 'globals';
 
-main {
-  padding: 4rem;
-  height: 100%;
-  min-height: calc(100vh - 60px); // stick footer to bottom
+/* home page */
+@import 'partials/home';
 
-  .social-icons {
-    margin-top: 16px;
+/* about Page */
+@import 'partials/about';
 
-    a {
-      padding: 5px;
+/* portfolio page */
+@import 'partials/portfolio';
 
-      &:hover {
-        color: $secondary-color;
-        @include ease-out;
-      }
-    }
-  }
-}
+/* contact page */
+@import 'partials/contact';
 
-main#home {
-  overflow: hidden;
-
-  h1 {
-    margin-top: 20vh; 
-  }
-}
-
-/* About Page */
-.about-info {
-  display: grid;
-  gap: 20px;
-  grid-template-areas:
-    'bioimage bio bio'
-    'job1 job2 job3';
-  grid-template-columns: repeat(3, 1fr);
-
-  .bio-image {
-    grid-area: bioimage;
-    margin: auto;
-    border-radius: 50%;
-    border: 3px solid $secondary-color;
-    width: 250px;
-    height: 250px;
-  }
-  
-  .bio {
-    grid-area: bio;
-    font-size: 18px;
-  }
-  
-  .job-1 {
-    grid-area: job1;
-  }
-  
-  .job-2 {
-    grid-area: job2;
-  }
-  
-  .job-3 {
-    grid-area: job3;
-  }
-  
-  .job {
-    background: lighten($primary-color, 5);
-    padding: 8px;
-    border-bottom: 3px solid $secondary-color;
-
-    h6 {
-      margin: 1rem 0;
-    }
-
-    ul {
-      padding-left: 20px;
-      text-align: left;
-    }
-  }
-}
-
-/* Work and Projects page */
-.projects {
-  display: grid;
-  gap: 10px;
-  grid-template-columns: repeat(3, 1fr);
-
-  .cover-image {
-    display: inline-block;
-    border: 3px solid white;
-    overflow: hidden;
-
-    img {
-      display:block;
-      width: 100%;
-      @include ease-out;
-    }
-
-    &:hover {
-      border-color: $secondary-color;
-
-      img {
-        opacity: .5;
-        transform: scale(1.5);
-      }
-    }
-  }
-}
-
-/* Contact page */
-.boxes {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-  align-items: center;
-  margin-top: 16px;
-
-  p {
-    font-size: 20px;
-    border: 3px solid white;
-    padding: 24px 40px;
-    margin-bottom: 48px;
-    @include ease-out;
-
-    &:hover {
-      background: $secondary-color;
-      color: set-text-color($secondary-color);
-
-      span {
-        color: set-text-color($secondary-color);
-      }
-    }
-  }
-}
-
-/* Button styles */
-.btn {
-  display: block;
-  padding: 8px 16px;
-  border: 0;
-  margin-bottom: 5px;
-
-  &:hover {
-    background: $secondary-color;
-    color: set-text-color($secondary-color);
-  }
-}
-
-.btn-dark {
-  @extend .btn;
-  background: darken($primary-color, 50);
-  color: white;
-}
-
-.btn-light {
-  @extend .btn;
-  background: lighten($primary-color, 50);
-  color: #333;
-}
-
+/* main footer */
 #footer {
   text-align: center;
   padding: 16px;

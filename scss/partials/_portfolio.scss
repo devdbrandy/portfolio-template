@@ -1,0 +1,26 @@
+.projects {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(3, 1fr);
+
+  .cover-image {
+    display: inline-block;
+    border: 3px solid white;
+    overflow: hidden;
+
+    img {
+      display:block;
+      width: 100%;
+      @include ease-out;
+    }
+
+    &:hover {
+      border-color: $secondary-color;
+
+      img {
+        opacity: .5;
+        transform: scale(1.5);
+      }
+    }
+  }
+}

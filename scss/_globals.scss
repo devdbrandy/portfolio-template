@@ -1,0 +1,28 @@
+.text-secondary {
+  color: $secondary-color;
+}
+
+/* Button styles */
+.btn {
+  display: block;
+  padding: 8px 16px;
+  border: 0;
+  margin-bottom: 5px;
+
+  &:hover {
+    background: $secondary-color;
+    color: set-text-color($secondary-color);
+  }
+}
+
+.btn-dark {
+  @extend .btn;
+  background: darken($primary-color, 50);
+  color: white;
+}
+
+.btn-light {
+  @extend .btn;
+  background: lighten($primary-color, 50);
+  color: #333;
+}
